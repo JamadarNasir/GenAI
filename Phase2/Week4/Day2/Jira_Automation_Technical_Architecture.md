@@ -10,7 +10,7 @@ Version 1.0
 This document defines the architecture and system design for a web-based
 internal tool to automate:
 
-JIRA Integration Module – Functional Requirements
+**JIRA Integration Module** – Functional Requirements
 1. JIRA Connection
   The system shall establish a secure connection with a self-hosted JIRA instance and provide the following three functional options:
   Create Subtask
