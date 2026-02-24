@@ -1,4 +1,4 @@
-# Jira Automation Web System
+# Jira Integraton Web System
 
 Technical Architecture & System Design Document\
 Version 1.0
@@ -10,11 +10,40 @@ Version 1.0
 This document defines the architecture and system design for a web-based
 internal tool to automate:
 
--   Connect to JIRA 
--   Subtask creation with story point redistribution
--   Worklog entry logging
--   Bulk test case Pass/Fail updates via Synapse plugin
--   Real-time Jira integration (Self-hosted)
+JIRA Integration Module – Functional Requirements
+1. JIRA Connection
+  The system shall establish a secure connection with a self-hosted JIRA instance and provide the following three functional options:
+  Create Subtask
+  Log Work Hours
+  Bulk Test Case Update (via Synapse plugin)
+  The integration shall support real-time interaction with JIRA.
+2. Create Subtask
+  The system shall fetch and display all user stories assigned to the logged-in user.
+  The user stories shall be presented as selectable radio buttons.
+  Upon selecting a user story, the system shall:
+  Allow creation of one or more subtasks.
+  Support redistribution of story points between the parent story and the newly created subtasks.
+  Story point validation shall ensure proper allocation before subtask creation.
+3. Worklog Entry Logging
+  For a selected user story or subtask, the system shall provide:
+  Date selection (From–To calendar picker).
+  Hours input (default value: 8 hours if no value is entered).
+  Worklog summary/description field.
+  The system shall log the work entry against the selected issue.
+  All worklog entries shall be recorded in IST (Indian Standard Time) timezone.
+  The system shall update JIRA in real-time upon submission.
+4. Bulk Test Case Pass/Fail Updates
+  The system shall support bulk test case status updates through the Synapse plugin.
+  Input shall be accepted in structured format (e.g., CSV/Excel).
+  The system shall:
+      Read Test Case ID.
+      Update status as Pass/Fail.
+      Optionally link defects for failed test cases.
+      Updates shall reflect immediately in JIRA.
+5. Real-Time JIRA Integration (Self-Hosted)
+  The system shall integrate with a self-hosted JIRA environment.
+  All operations (subtask creation, worklog logging, test case updates) shall be executed via JIRA REST APIs.
+  Data synchronization shall be real-time with proper error handling and validation.
 
 The system follows:
 
