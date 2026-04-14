@@ -1,0 +1,31 @@
+{
+  "name": "ai-test-automation-engine",
+  "version": "1.0.0",
+  "description": "Playwright + Cucumber.js automation engine — auto-generated tests",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:chromium": "cross-env BROWSER=chromium cucumber-js",
+    "test:firefox": "cross-env BROWSER=firefox cucumber-js",
+    "test:webkit": "cross-env BROWSER=webkit cucumber-js",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:regression": "cucumber-js --tags @regression",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "clean": "rimraf allure-results allure-report"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.42.0",
+    "allure-js-commons": "^2.15.1",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.42.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,9 @@
+testCaseId,title,module,steps,expectedResult,priority,tags
+TC001,Login with valid credentials,Login,1. Navigate to login page 2. Enter username standard_user 3. Enter password secret_sauce 4. Click Login button,Dashboard page should be visible,high,smoke login
+TC002,Login with invalid password,Login,1. Navigate to login page 2. Enter username standard_user 3. Enter password wrong_pass 4. Click Login button,Error message should be displayed for invalid credentials,high,smoke login negative
+TC003,Login with empty username,Login,1. Navigate to login page 2. Leave username field empty 3. Enter password secret_sauce 4. Click Login button,Error message Username is required should be displayed,medium,regression login
+TC004,Add item to cart,Shopping Cart,1. Login with valid credentials 2. Click on Sauce Labs Backpack 3. Click Add to cart button,Cart badge should show count 1,high,smoke cart
+TC005,Remove item from cart,Shopping Cart,1. Login with valid credentials 2. Add an item to cart 3. Click cart icon 4. Click Remove button,Cart should be empty,medium,regression cart
+TC006,Complete checkout flow,Checkout,1. Login with valid credentials 2. Add item to cart 3. Click cart icon 4. Click Checkout button 5. Fill first name John 6. Fill last name Doe 7. Fill zip code 12345 8. Click Continue 9. Click Finish,Order confirmation Thank you for your order should be displayed,high,smoke checkout e2e
+TC007,Sort products by price low to high,Products,1. Login with valid credentials 2. Click sort dropdown 3. Select Price low to high,Products should be sorted by ascending price,low,regression sorting
+TC008,Verify product details page,Products,1. Login with valid credentials 2. Click on Sauce Labs Backpack,Product name and description and price and Add to Cart button should be visible,medium,regression products

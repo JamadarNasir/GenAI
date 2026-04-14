@@ -1,0 +1,75 @@
+## Few-Shot Examples: CSV Test Cases → Gherkin Feature Files
+
+### Example Input (CSV rows as JSON):
+
+[
+  {
+    "testCaseId": "TC001",
+    "title": "Login with valid credentials",
+    "module": "Login",
+    "steps": ["Navigate to login page", "Enter username standard_user", "Enter password secret_sauce", "Click Login button"],
+    "expectedResult": "Dashboard page should be visible",
+    "priority": "high",
+    "tags": ["@smoke", "@login"]
+  },
+  {
+    "testCaseId": "TC002",
+    "title": "Login with invalid password",
+    "module": "Login",
+    "steps": ["Navigate to login page", "Enter username standard_user", "Enter password wrong_pass", "Click Login button"],
+    "expectedResult": "Error message should be displayed for invalid credentials",
+    "priority": "high",
+    "tags": ["@smoke", "@login", "@negative"]
+  }
+]
+
+### Example Output (Gherkin):
+
+@smoke @login
+Feature: Login Functionality
+  As a user, I want to log in to the application so I can access protected features.
+
+  @smoke
+  Scenario: Login with valid credentials
+    Given user navigates to the "login" page
+    When user enters "standard_user" in the "Username" field
+    And user enters "secret_sauce" in the "Password" field
+    And user clicks the "Login" button
+    Then the "Dashboard" page should be visible
+
+  @smoke @negative
+  Scenario: Login with invalid password
+    Given user navigates to the "login" page
+    When user enters "standard_user" in the "Username" field
+    And user enters "wrong_pass" in the "Password" field
+    And user clicks the "Login" button
+    Then an error message should be displayed for invalid credentials
+
+---FEATURE_SEPARATOR---
+
+### Example Input (CSV rows as JSON):
+
+[
+  {
+    "testCaseId": "TC010",
+    "title": "Add item to shopping cart",
+    "module": "Shopping Cart",
+    "steps": ["Login with valid credentials", "Click on Sauce Labs Backpack product", "Click Add to cart button"],
+    "expectedResult": "Cart badge should show count 1",
+    "priority": "high",
+    "tags": ["@smoke", "@cart"]
+  }
+]
+
+### Example Output (Gherkin):
+
+@smoke @cart
+Feature: Shopping Cart
+  As a user, I want to add items to my shopping cart so I can purchase them.
+
+  @smoke
+  Scenario: Add item to shopping cart
+    Given user is logged in with valid credentials
+    When user clicks the "Sauce Labs Backpack" product
+    And user clicks the "Add to cart" button
+    Then the cart badge should show count "1"

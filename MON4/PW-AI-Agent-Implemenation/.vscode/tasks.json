@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Test CSV Upload",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-upload.js"
+		},
+		{
+			"label": "Test CSV Upload",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-upload.js"
+		},
+		{
+			"label": "Test CSV Upload 2",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-upload.js"
+		},
+		{
+			"label": "Test CSV Edge Cases",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-upload-edge.js"
+		},
+		{
+			"label": "Test AI Layer",
+			"type": "shell",
+			"command": "cd c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend && npx ts-node --project ../ai/tsconfig.json ../ai/test-ai-layer.ts"
+		},
+		{
+			"label": "Test AI Layer 2",
+			"type": "shell",
+			"command": "Push-Location c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend; npx ts-node --project ../ai/tsconfig.json ../ai/test-ai-layer.ts"
+		},
+		{
+			"label": "Test AI Layer",
+			"type": "shell",
+			"command": "Push-Location c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend; npx ts-node ../ai/test-ai-layer.ts"
+		},
+		{
+			"label": "Test AI Layer v3",
+			"type": "shell",
+			"command": "Push-Location c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend; npx ts-node src/test-ai.ts"
+		},
+		{
+			"label": "Test BDD Generation",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-bdd.js"
+		},
+		{
+			"label": "BDD Quick Test",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-bdd-quick.js"
+		},
+		{
+			"label": "Phase5 CodeGen Test",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-codegen.js"
+		},
+		{
+			"label": "Phase5-Test",
+			"type": "shell",
+			"command": "node c:\\Nasir\\BM\\MON4\\Week2-Hackton\\PW-AI-Agent-Implemenation\\backend\\test-codegen.js"
+		}
+	]
+}

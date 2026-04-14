@@ -1,0 +1,44 @@
+{
+  "name": "ai-test-automation-agent",
+  "version": "1.0.0",
+  "description": "AI Test Automation Agent — React + Node.js + Playwright + Cucumber + Allure + OpenAI",
+  "main": "index.js",
+  "scripts": {
+    "predev:backend": "node -e \"try{const e=require('child_process').execSync('netstat -ano | findstr :4000',{encoding:'utf8',stdio:['pipe','pipe','ignore']});const p=[...new Set(e.split('\\n').map(l=>l.trim().split(/\\s+/).pop()).filter(p=>p&&/^\\d+$/.test(p)&&p!=='0'))];p.forEach(pid=>{try{require('child_process').execSync('taskkill /F /PID '+pid,{stdio:'ignore'})}catch(e){}});console.log('[predev] Port 4000 cleared')}catch(e){console.log('[predev] Port 4000 was free')}\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run preview",
+    "test": "cd automation && npm test",
+    "test:smoke": "cd automation && npm run test:smoke",
+    "allure:generate": "cd automation && npm run allure:generate",
+    "allure:open": "cd automation && npm run allure:open",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../automation && npm install",
+    "clean": "cd automation && npm run clean"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "ai",
+    "test-automation",
+    "bdd",
+    "openai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "openai": "^6.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}
